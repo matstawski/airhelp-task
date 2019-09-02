@@ -16,6 +16,8 @@ The performance Test Scenario is as follows:
 5. Sharply reduce the number of the vus to 0.
 6. Gradually increase the number of the vus to approximately 80% of the maximum capacity and run the test for a long time.
 
+Test in present configuration takes around 75 minutes to complete, I assumed that the test is performed for a release candidate version of the application.
+
 ## Getting Started
 
 Open the Terminal and use the following command in a directory You want to download the repository.

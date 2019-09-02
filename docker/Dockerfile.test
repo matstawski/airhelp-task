@@ -1,0 +1,7 @@
+FROM loadimpact/k6
+
+COPY tests tests
+
+ENV NODE_ENV dev
+
+ENTRYPOINT k6 run ./tests/script_post_docker.js || true && k6 run ./tests/script_put_docker.js

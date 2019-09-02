@@ -6,7 +6,7 @@ QA Automation Engineer Task
 The following project was done to do the performance testing of the Ladybug app.
 The functional Test Scenario is as follows:
 1. Creating new orders using /api/orders/ endpoint.
-2. Accepting the previously created orders by the employee.
+2. Accepting the previously created orders using the /api/orders/{order id} endpoint.
 
 The performance Test Scenario is as follows:
 1. Generating traffic on about 40% of the maximal vus.

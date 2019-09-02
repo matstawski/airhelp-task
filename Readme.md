@@ -16,7 +16,7 @@ The performance Test Scenario is as follows:
 5. Sharply reduce the number of the vus to 0.
 6. Gradually increase the number of the vus to approximately 80% of the maximum capacity and run the test for a long time.
 
-Test in present configuration takes around 15 minutes to complete, I assumed that the test is performed for a release candidate version of the application.
+For security reasons the test in present configuration takes around 15 minutes to complete. To test the release candidate version I would recommend running the test for around a hour.
 
 ## Getting Started
 

@@ -7,17 +7,17 @@ export let options = {
     // * Please do change here if You want to start a different scenario *
     // *******************************************************************
     stages: [
-        { target: 40, duration: "10s" },
-        { target: 40, duration: "60s" },
-        { target: 100, duration: "30s" },
-        { target: 100, duration: "600s" },
+        { target: 100, duration: "10s" },
+        { target: 100, duration: "20s" },
+        { target: 250, duration: "10s" },
+        { target: 250, duration: "300s" },
         { target: 0, duration: "1ms" },
-        { target: 0, duration: "60s" },
-        { target: 100, duration: "1ms" },
-        { target: 100, duration: "600s" },
+        { target: 0, duration: "30s" },
+        { target: 250, duration: "1ms" },
+        { target: 250, duration: "150s" },
         { target: 0, duration: "1ms" },
-        { target: 80, duration: "60s" },
-        { target: 80, duration: "6000s" }
+        { target: 200, duration: "30s" },
+        { target: 200, duration: "300s" }
     ],
     thresholds: {
         "http_req_duration": ["p(95)<500"],

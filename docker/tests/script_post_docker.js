@@ -93,8 +93,7 @@ export default function(api_id_products_product_id) {
         //sending the order request
         let res = http.post("http://host.docker.internal:8080/api/orders/", JSON.stringify(formdata), {headers: headers});
         check(res, {
-        "Status is 200": (r) => r.status === 200, 
-        //"Response time is lower than 200ms": (r) => r.timings
+        "Status is 200": (r) => r.status === 200
     });
 })
 };

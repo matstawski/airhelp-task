@@ -11,14 +11,14 @@ export let options = {
         { target: 40, duration: "10s" },
         { target: 40, duration: "60s" },
         { target: 100, duration: "30s" },
-        { target: 100, duration: "180s" },
+        { target: 100, duration: "600s" },
         { target: 0, duration: "1ms" },
-        { target: 0, duration: "30s" },
+        { target: 0, duration: "60s" },
         { target: 100, duration: "1ms" },
-        { target: 100, duration: "180s" },
+        { target: 100, duration: "600s" },
         { target: 0, duration: "1ms" },
         { target: 80, duration: "60s" },
-        { target: 80, duration: "600s" }
+        { target: 80, duration: "6000s" }
     ],
     thresholds: {
         "http_req_duration": ["p(95)<500"],

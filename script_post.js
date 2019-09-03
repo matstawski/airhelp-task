@@ -48,8 +48,8 @@ export let options = {
   //     { target: 50, duration: "30s"},
   // ],
     thresholds: {
-        "http_req_duration": ["p(95)<500"],
-        "http_req_duration": ["avg<300"],
+        "http_req_duration": ["p(95)<750"],
+        "http_req_duration": ["avg<400"],
         "check_failure_rate": ["rate<0.05"]
     }
  };

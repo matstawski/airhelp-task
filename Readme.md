@@ -15,8 +15,6 @@ The performance Test Scenarios are (Scenarios are in script_post.js and script_p
 4. Soak test - average number of vus (500) for 24h.
 5. Spike test - starting with 500 vus, rapidly raising to 1200 and rapidly lowering to 50. Repeated three times.
 
-For security reasons the test in present configuration takes around 15 minutes to complete. To test the release candidate version I would recommend running the test for around a hour.
-
 ## Getting Started
 
 Open the Terminal and use the following command in a directory You want to download the repository.

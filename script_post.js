@@ -7,21 +7,21 @@ export let options = {
     // *******************************************************************
     // * Please do change here if You want to start a different scenario *
     // *******************************************************************
-    stages: [
-        { target: 100, duration: "10s" },
-        { target: 100, duration: "20s" },
-        { target: 250, duration: "10s" },
-        { target: 250, duration: "300s" },
-        { target: 0, duration: "1ms" },
-        { target: 0, duration: "30s" },
-        { target: 250, duration: "1ms" },
-        { target: 250, duration: "150s" },
-        { target: 0, duration: "1ms" },
-        { target: 200, duration: "30s" },
-        { target: 200, duration: "300s" }
-    ],
+    // stages: [
+    //     { target: 100, duration: "10s" },
+    //     { target: 100, duration: "20s" },
+    //     { target: 250, duration: "10s" },
+    //     { target: 250, duration: "300s" },
+    //     { target: 0, duration: "1ms" },
+    //     { target: 0, duration: "30s" },
+    //     { target: 250, duration: "1ms" },
+    //     { target: 250, duration: "150s" },
+    //     { target: 0, duration: "1ms" },
+    //     { target: 200, duration: "30s" },
+    //     { target: 200, duration: "300s" }
+    // ],
     thresholds: {
-        "http_req_duration": ["p(95)<500"],
+        "http_req_duration": ["p(95)<2000"],
         "check_failure_rate": ["rate<0.05"]
     }
  };

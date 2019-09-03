@@ -3,25 +3,52 @@ import http from "k6/http";
 import { check, group, } from 'k6';
 
 export let options = {
-     // *******************************************************************
-    // * Please do change here if You want to start a different scenario *
-    // *******************************************************************
+    // ****************************************************************************
+    // * Please do uncomment/change here if You want to start a different scenario *
+    // *****************************************************************************
+    
+    //Baseline test - fixed vu for 10 minutes
     stages: [
-        { target: 10, duration: "20s" },
-       //{ target: 550, duration: "5s" },
-        // { target: 250, duration: "10s" },
-        // { target: 250, duration: "300s" },
-        // { target: 0, duration: "1ms" },
-        // { target: 0, duration: "30s" },
-        // { target: 250, duration: "1ms" },
-        // { target: 250, duration: "150s" },
-        // { target: 0, duration: "1ms" },
-        // { target: 200, duration: "30s" },
-        // { target: 200, duration: "300s" }
+        { target: 500, duration: "10s"},
+        { target: 500, duration: "600s"},
+        { target: 0, duration: "10s"}, 
     ],
+  //   //Peak test - warmup, 50 minutes peak time, teardown
+  //   stages: [
+  //     { target: 500, duration: "300s"},
+  //     { target: 500, duration: "3000s"},
+  //     { target: 0, duration: "300s"}, 
+  // ],
+  //   //Stress test - maximum number of vus api can handle - CAREFUL!!!
+  //   stages: [
+  //     { target: 5000, duration: "180s"},
+  //     { target: 5000, duration: "300s"},
+  // ],
+   //Soak test - average users for a long time
+  //   stages: [
+  //     { target: 500, duration: "30s"},
+  //     { target: 500, duration: "24h"},
+  // ],
+  //   //Spike test - couple of fast spikes
+  //   stages: [
+  //     { target: 500, duration: "30s"},
+  //     { target: 500, duration: "30s"},
+  //     { target: 1200, duration: "1ms"},
+  //     { target: 1200, duration: "30s"},
+  //     { target: 50, duration: "1ms"},
+  //     { target: 50, duration: "30s"},
+  //     { target: 1200, duration: "1ms"},
+  //     { target: 1200, duration: "30s"},
+  //     { target: 50, duration: "1ms"},
+  //     { target: 50, duration: "30s"},
+  //     { target: 1200, duration: "1ms"},
+  //     { target: 1200, duration: "30s"},
+  //     { target: 50, duration: "1ms"},
+  //     { target: 50, duration: "30s"},
+  // ],
     thresholds: {
-        "http_req_duration": ["p(95)<1000"],
-        "http_req_duration": ["avg<500"],
+        "http_req_duration": ["p(95)<750"],
+        "http_req_duration": ["avg<400"],
         "check_failure_rate": ["rate<0.05"]
     },
  };

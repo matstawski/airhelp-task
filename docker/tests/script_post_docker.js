@@ -7,20 +7,21 @@ export let options = {
     // * Please do change here if You want to start a different scenario *
     // *******************************************************************
     stages: [
-        { target: 100, duration: "10s" },
-        { target: 100, duration: "20s" },
-        { target: 250, duration: "10s" },
-        { target: 250, duration: "300s" },
-        { target: 0, duration: "1ms" },
-        { target: 0, duration: "30s" },
-        { target: 250, duration: "1ms" },
-        { target: 250, duration: "150s" },
-        { target: 0, duration: "1ms" },
-        { target: 200, duration: "30s" },
-        { target: 200, duration: "300s" }
+        { target: 10, duration: "20s" },
+       //{ target: 550, duration: "5s" },
+        // { target: 250, duration: "10s" },
+        // { target: 250, duration: "300s" },
+        // { target: 0, duration: "1ms" },
+        // { target: 0, duration: "30s" },
+        // { target: 250, duration: "1ms" },
+        // { target: 250, duration: "150s" },
+        // { target: 0, duration: "1ms" },
+        // { target: 200, duration: "30s" },
+        // { target: 200, duration: "300s" }
     ],
     thresholds: {
-        "http_req_duration": ["p(95)<500"],
+        "http_req_duration": ["p(95)<1000"],
+        "http_req_duration": ["avg<500"],
         "check_failure_rate": ["rate<0.05"]
     },
  };
@@ -93,7 +94,8 @@ export default function(api_id_products_product_id) {
         //sending the order request
         let res = http.post("http://host.docker.internal:8080/api/orders/", JSON.stringify(formdata), {headers: headers});
         check(res, {
-        "Status is 200": (r) => r.status === 200
+        "Status is 200": (r) => r.status === 200,
+        "content-type is application/json": (res) => res.headers['Content-Type'] === "application/json;charset=UTF-8"
     });
 })
 };

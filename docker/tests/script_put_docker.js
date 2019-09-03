@@ -65,6 +65,7 @@ export default function(array_of_ids)
         let res = http.put("http://host.docker.internal:8080/api/orders/" + array_of_ids[i], formdata, {headers: headers});
         check(res, {
                 "Status is 200": (r) => r.status === 200, 
+                "content-type is application/json": (res) => res.headers['Content-Type'] === "application/json;charset=UTF-8"
             }  
         )}   
     })

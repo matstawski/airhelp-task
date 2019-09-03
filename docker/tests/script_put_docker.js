@@ -4,10 +4,10 @@ import { check, group, } from 'k6';
 
 //Options 
 export let options = {
-    setupTimeout: "90s",
+    setupTimeout: "120s",
     thresholds: {
-        "http_req_duration": ["p(95)<750"],
-        "http_req_duration": ["avg<400"],
+        "http_req_duration": ["p(95)<500"],
+        "http_req_duration": ["avg<300"],
         "check_failure_rate": ["rate<0.05"]
     }
 };

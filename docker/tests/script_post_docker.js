@@ -24,7 +24,7 @@ export let options = {
   //     { target: 5000, duration: "180s"},
   //     { target: 5000, duration: "300s"},
   // ],
-   //Soak test - average users for a long time
+  //   //Soak test - average users for a long time
   //   stages: [
   //     { target: 500, duration: "30s"},
   //     { target: 500, duration: "24h"},

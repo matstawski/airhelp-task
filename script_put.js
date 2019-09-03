@@ -4,10 +4,10 @@ import { check, group, } from 'k6';
 
 //Options 
 export let options = {
-    setupTimeout: "90s",
+    setupTimeout: "120s",
     thresholds: {
-        "http_req_duration": ["p(95)<750"],
-        "http_req_duration": ["avg<400"],
+        "http_req_duration": ["p(95)<500"],
+        "http_req_duration": ["avg<300"],
         "check_failure_rate": ["rate<0.05"]
     }
 };
@@ -62,9 +62,8 @@ export default function(array_of_ids)
         //sending the request
         let res = http.put("http://localhost:8080/api/orders/" + array_of_ids[i], formdata, {headers: headers});
         check(res, {
-                "Status is 200": (r) => r.status === 200, 
-                "content-type is application/json": (res) => res.headers['Content-Type'] === "application/json;charset=UTF-8"
-            }  
+                "Status is 200": (r) => r.status === 200
+        }
         )}
     })
 };

@@ -9,11 +9,11 @@ The functional Test Scenario is as follows:
 2. Accepting the previously created orders using the /api/orders/{order id} endpoint.
 
 The performance Test Scenarios are (Scenarios are in script_post.js and script_post_docker.js prepared to be uncommented and/or modified to run):
-1. Baseline test - fixed 500 vus for 10 minutes.
-2. Peak test - 500 users for 50 minutes.
+1. Baseline test - fixed 75 vus for 10 minutes.
+2. Peak test - 150 users for 50 minutes.
 3. Stress test - to find the maximum number of vus api can handle - 5000 vus for 5 minutes. Be careful with starting the test!
-4. Soak test - average number of vus (500) for 24h.
-5. Spike test - starting with 500 vus, rapidly raising to 1200 and rapidly lowering to 50. Repeated three times.
+4. Soak test - average number of vus (100) for 24h.
+5. Spike test - starting with 50 vus, rapidly raising to 200 and rapidly lowering to 50. Repeated three times.
 
 ## Getting Started
 

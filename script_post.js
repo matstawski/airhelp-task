@@ -21,8 +21,9 @@ export let options = {
     //     { target: 200, duration: "300s" }
     // ],
     thresholds: {
-        "http_req_duration": ["p(95)<2000"],
-        "check_failure_rate": ["rate<0.05"]
+      "http_req_duration": ["p(95)<1000"],
+      "http_req_duration": ["avg<500"],
+      "check_failure_rate": ["rate<0.05"]
     }
  };
 
@@ -98,6 +99,7 @@ export default function(api_id_products_product_id) {
         let res = http.post("http://localhost:8080/api/orders/", JSON.stringify(formdata), {headers: headers});
         check(res, {
         "Status is 200": (r) => r.status === 200, 
+        "content-type is application/json": (res) => res.headers['Content-Type'] === "application/json;charset=UTF-8"
     });
     
 })
